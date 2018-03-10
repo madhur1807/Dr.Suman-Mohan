@@ -183,7 +183,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					easingType: 'linear' 
 				};
 				*/
-				
+				var current_path = window.location.pathname.split('/').pop();
+				if(current_path == "diabetes.html"){
+					$(".nav1").find("a").removeClass("active");
+					$($(".nav1 a").eq(2)).addClass("active");
+				}
 				$().UItoTop({ easingType: 'easeOutQuart' });
 				
 			});

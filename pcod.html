@@ -179,7 +179,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				*/
 				
 				$().UItoTop({ easingType: 'easeOutQuart' });
-				
+				var current_path = window.location.pathname.split('/').pop();
+				if(current_path == "pcod.html"){
+					$(".nav1").find("a").removeClass("active");
+					$($(".nav1 a").eq(2)).addClass("active");
+				}
 			});
 		</script>
 		<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
