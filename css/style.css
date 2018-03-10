@@ -91,7 +91,7 @@ span.menu {
 .top-nav ul li a:hover,.top-nav ul li a.active {
   color: #fff;
   background: rgb(58, 222, 203);
-  padding: 3.5em 0.5em;
+  padding: 3.5em 0.5em; 
 }
 .top-nav ul li a:hover,
 .top-nav ul li a:focus {
@@ -3522,4 +3522,8 @@ span.menu img {
 	#head_title{
 		margin-top: 40% !important;
 	}	
+}
+
+.dropdown-content>a:hover{
+	padding: 1em 0.5em !important;
 }
