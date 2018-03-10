@@ -2041,6 +2041,9 @@ a.callbacks_nav.callbacks3_nav.next {
 } 
 }
 @media(max-width:768px){
+.testi span.sbscrpt{
+	right: 0%;
+}
 .header {
 	padding: 2em 0 0;
 }
@@ -2669,7 +2672,7 @@ a.callbacks_nav.callbacks2_nav.prev {
   font-size: 13px;
 }
 .testi-slider {
-  padding-bottom: 3em;
+  padding-bottom: 0em;
 }
 .content-grids {
   background-size:100%;
