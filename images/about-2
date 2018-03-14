@@ -1,0 +1,2329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>24X7 Medical HelpLine</title>
+
+
+<link href="style.css" type="text/css" rel="stylesheet" />
+<link href="inner.css" type="text/css" rel="stylesheet" />
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+
+
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!--<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<script src="js/jquery.carouFredSel-5.5.0-packed.js" type="text/javascript"></script>-->
+	<!--[if lt IE 9]>
+		<script src="js/modernizr.custom.js"></script>
+	<![endif]-->
+	<!--<script src="js/functions.js" type="text/javascript"></script>-->
+	
+	
+	<script type="text/javascript">
+function clickclear(thisfield, defaulttext) {
+if (thisfield.value == defaulttext) {
+thisfield.value = "";
+document.getElementById("state").style.color="#000";
+}
+}
+
+function clickrecall(thisfield, defaulttext) {
+if (thisfield.value == "") {
+thisfield.value = defaulttext;
+document.getElementById("state").style.color="#7a7b7b";
+}
+}
+</script>
+
+<script type="text/javascript" language="javascript">
+function city(str)
+	{
+	var str1=str;
+		if((str1!='select')&&(str1!='all'))
+		{
+			document.getElementById("city").innerHTML="Where In" + " " + str1 +"?";
+		}
+		if(str1=='all')
+		{
+		document.getElementById("city").innerHTML="Where In Delhi/NCR ?";
+		}
+		if(str1=='select')
+		{
+		document.getElementById("city").innerHTML=" ";
+		}
+	}
+</script>
+
+<link type="text/css" href="css/redmond/jquery-ui-1.8rc3.custom.css" rel="stylesheet" />	
+<script language="javascript" type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8rc3.custom.min.js"></script>
+<script type="text/javascript">
+/*********CHANGES STARTS HERE*************/
+$(function() {
+   $( "#state" ).autocomplete({
+   	source: function( request, response ){
+   		$.ajax({
+   			url: "states.php",
+   			dataType: "json",
+   			data: {
+               term : request.term,
+               isAutoComplete:true
+            },
+            success: function(data){
+               response($.map(data, function(item) {
+                  return {
+                     label: makeBold(item.value, request.term),
+                     value: item.value
+                  };
+               }));
+            }
+		   })
+		},
+      minLength: 2
+	}
+	);
+});
+
+// This function will make bold
+function makeBold(from, to) {
+  var matched = new RegExp("("+$.ui.autocomplete.escapeRegex(to)+")", "ig" );
+  return from.replace(matched, "<strong>$1</strong>");
+}
+/*........CHANGES END HERE.......*/
+
+</script>
+        <script type="text/javascript">
+		$(function() {
+			<!--$('#abbrev').val("");-->
+			
+			$("#add").autocomplete({
+				source: "add.php",
+				minLength: 2,
+				select: function(event, ui) {
+					$('#state_id').val(ui.item.id);
+					$('#abbrev').val(ui.item.abbrev);
+				}
+			});
+			<!-- 
+			//$("#state_abbrev").autocomplete({
+				//source: "states_abbrev.php",
+				//minLength: 2
+			//});-->
+		});
+		</script>
+        <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+        <style type="text/css">
+        <style type="text/css">
+<!--
+
+.style2 {font-family:Arial, Helvetica, sans-serif;}
+.style3{
+color:#000;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px; font-weight:bold;}
+-->
+        </style>
+
+        
+        
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="logo_band">
+<div class="header">
+<div id="logo"><a href="index.php"><img src="images/logo.jpg" width="249" height="97" style="border:none;" /></a></div>
+<div class="StickCon">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+    <td><p>We Are Just One Call Away -&nbsp;&nbsp; </p></td>
+    <td><img src="images/call-icon.png" width="25" height="25" style="float:left; margin-top:10px"></td>
+    <td><span style="margin-top:-12px; float:left"> <strong>011 64-54-54-54  </strong></span>&nbsp;&nbsp;</td>
+    <td><img src="images/whatsapp.png" width="25" height="25" style="float:left; margin-top:10px" />  </td>    
+   <td><span style="margin-top:-10px; float:left; "> <strong> +91 844-744-7444</strong></span></td>
+  </tr>
+</table>
+</div>
+<div id="top_search">
+</div>
+<div class="clear"></div>
+</div>
+</div><div id="nav">
+  <div class="nav_menu">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><form action="search_result.php" method="get" name="search1" onsubmit="return search_check();" >
+            <div class="search"> 
+            
+           <div class="SearchTop">
+               <strong class="MarRight">City</strong>
+               <strong>Search By :</strong>
+                  <label><input type="radio" name="search_by" id="radio" value="name" />  Name</label>
+                     <label><input type="radio" name="search_by" id="radio" value="service" />Service </label>
+                       <label> <input type="radio" name="search_by" id="radio" value="both" checked="checked" />  Both</label>                                      
+                         <span id="city"></span>
+              </div>           
+            
+            <div class="SearchBottom">
+              <select name="city_name" onchange="city(this.value);" >
+                <option value="select"> ----Select City---- </option>
+                  <optgroup label="Delhi/NCR">
+                   <option value="all">&nbsp;&nbsp;Delhi/NCR All</option>
+                    <option value="Delhi">&nbsp;&nbsp;Delhi</option>
+                      <option value="Noida">&nbsp;&nbsp;Noida</option>
+                       <option value="Gurgaon">&nbsp;&nbsp;Gurgaon</option>
+                        <option value="Faridabad">&nbsp;&nbsp;Faridabad</option>
+                         <option value="Jaipur">&nbsp;&nbsp;Jaipur</option>
+                <option value="Chandigarh">&nbsp;&nbsp;Chandigarh</option>
+                 <option value="Hisar">&nbsp;&nbsp;Hisar</option>
+                </optgroup>
+              </select>
+                <input type="text" class="input350" name="search12" id="state" value="Looking For Service e.g. Hospital" onclick="clickclear(this, 'Looking For Service e.g. Hospital')" onblur="clickrecall(this,'Looking For Service e.g. Hospital')"  />
+                   <input class="input215" name="locality" type="text"  id="add" value="e.g. GURGAON  SEC-10"  onclick="clickclear(this, 'e.g. GURGAON  SEC-10')" onblur="clickrecall(this,'e.g. GURGAON  SEC-10')" />
+                        <input type="submit" name="button" id="button" value="Search"  />
+            </div>
+              <div class="clear"></div>
+            </div>
+          </form></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+ 
+
+<!-----------------top ad-------------------------->
+  <div class="GoogleAD">
+  <div class="Googlecenter">
+ 
+  <div class="skdslider1" >
+    <ul id="demo3" class="slides1">  
+<!-- 24x7medical;helpline -->
+  <!--<iframe src="TopBanner/Top-Bannaer.php" frameborder="0" width="938" height="113" scrolling="no"></iframe>-->
+
+  
+<!--<ins class="adsbygoogle"
+     style="display:inline-block;width:950px !important;height:90px"
+     data-ad-client="ca-pub-6762889273295988"
+     data-ad-slot="7558071159"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>-->
+</ul>
+
+</div>
+</div>
+</div>
+<!--<div style="float:left; width:25%">
+<div class="social_link">
+
+    <div class="number">Toll Free : <span>1800-200-3949</span></div>
+
+</div>
+ </div>-->
+<div class="statusbar">
+  110&nbsp;Results for "Homeopathic" </div>
+<div class=" innercontent_box">
+<div class="left_col">
+
+<!------------------Google Add Start-------------------------->
+<div class="FooterAdd MarTop">
+<div class="skdslider2" >
+    <ul id="demo4" class="slides2">  
+<!-- 24x7medical;helpline -->
+
+
+  
+<!--<ins class="adsbygoogle"
+     style="display:inline-block;width:950px !important;height:90px"
+     data-ad-client="ca-pub-6762889273295988"
+     data-ad-slot="7558071159"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>-->
+</ul>
+
+</div>
+
+
+
+<!-- 24x7medical -->
+  
+</div>
+
+<!------------------Google Add end-------------------------->
+
+
+<div class=" inner_links">
+
+<div class="inner_links_head">Related Keywords</div>
+<div class=" inner_links_center">
+  <ul>
+ 
+            <li><a href="search_result.php?locality=&category=all&city_name=all&search_by=both&search12=homeopathic">Homeopathic</a></li>
+      
+     
+           </ul>
+  </div>
+</div>
+<div class=" inner_links">
+<div class="inner_links_head">Also See 24X7 For</div>
+<div class=" inner_links_center">
+  <ul>
+               <li><a href="search_result.php?locality=&category=all&city_name=all&search12= blood bank&search_by=both"> <img src="images/bullet.png" width="7" height="7" /> Blood Bank</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressue equipment dealers&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressue Equipment Dealers</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure centres&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure Centres</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure doctors&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure Doctors</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupressure training institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupressure Training Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupuncture&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupuncture</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupuncture clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupuncture Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupuncture doctors&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupuncture Doctors</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupuncture specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupuncture Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupuncture teachers&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupuncture Teachers</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=acupuncture training institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Acupuncture Training Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=air ambulance&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Air Ambulance</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=air ambulance service&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Air Ambulance Service</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance cats&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance Cats</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance equipment dealers&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance Equipment Dealers</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance fabricator&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance Fabricator</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance service for 24 hrs&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance Service For 24 Hrs</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance service for veterinary&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance Service For Veterinary</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance services &search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance Services </a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance with a/c & non a/c&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance With A/c & Non A/c</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ambulance with body freezer&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ambulance With Body Freezer</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthesioligist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthesioligist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthesiologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthesiologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthesiologist cardiac surgery&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthesiologist Cardiac Surgery</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthesiologist centres&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthesiologist Centres</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthesiologist clinics&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthesiologist Clinics</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthetic equipment dealers&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthetic Equipment Dealers</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthetic equipments&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthetic Equipments</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthetic medicos&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthetic Medicos</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=anesthetic on call&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Anesthetic On Call</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astro consultants&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astro Consultants</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer at home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer At Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer at office&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer At Office</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer for home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer For Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer for office&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer For Office</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer on call&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer On Call</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer training centres&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer Training Centres</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrologer training institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrologer Training Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrology&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrology</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=astrology institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Astrology Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=audiologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Audiologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ayurvedic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ayurvedic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ayurvedic centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ayurvedic Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ayurvedic clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ayurvedic Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ayurvedic doctor&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ayurvedic Doctor</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=blood banks&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Blood Banks</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=blood donation centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Blood Donation Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cancer&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cancer</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cancer centres&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cancer Centres</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cancer hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cancer Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cancer specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cancer Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cardiac physician&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cardiac Physician</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cardiologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cardiologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=chemist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Chemist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=chemist 24 hours&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Chemist 24 Hours</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=chemist home delivery&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Chemist Home Delivery</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=chemist whole seller&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Chemist Whole Seller</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=child & neontalogist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Child & Neontalogist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=child & paediatrics&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Child & Paediatrics</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=child clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Child Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=child hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Child Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=child specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Child Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=cosmetic surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Cosmetic Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dead body preezervation&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dead Body Preezervation</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dental clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dental Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dental hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dental Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dental surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dental Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dentist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dentist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dermatologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dermatologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dermatologist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dermatologist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=dermatologist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Dermatologist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=diagnostic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Diagnostic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=diagnostic centres&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Diagnostic Centres</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=diagnostic lab&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Diagnostic Lab</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=diataction&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Diataction</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=doctors for home visit&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Doctors For Home Visit</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=endocrinologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Endocrinologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=endocrinologist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Endocrinologist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ent clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ent Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ent hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ent Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ent specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ent Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ent surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ent Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=eye bank&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Eye Bank</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=eye clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Eye Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=eye donation centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Eye Donation Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=eye hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Eye Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=eye specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Eye Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=eye surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Eye Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=freezer box&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Freezer Box</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gastroenterologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gastroenterologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gastroenterologist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gastroenterologist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gastroenterologist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gastroenterologist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=general physician&search_by=both"> <img src="images/bullet.png" width="7" height="7" />General Physician</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=general practice&search_by=both"> <img src="images/bullet.png" width="7" height="7" />General Practice</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=general practitioner&search_by=both"> <img src="images/bullet.png" width="7" height="7" />General Practitioner</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=general surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />General Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gynaecologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gynaecologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gynaecologist centres&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gynaecologist Centres</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gynaecologist clinics&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gynaecologist Clinics</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=gynaecologist with ivf facility&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Gynaecologist With Ivf Facility</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hair loss&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hair Loss</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hair transplant&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hair Transplant</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hair treatment&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hair Treatment</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=health care centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Health Care Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=health care product&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Health Care Product</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=health club&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Health Club</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=health insurance&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Health Insurance</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=health service&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Health Service</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hearing & speech &search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hearing & Speech </a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=heart centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Heart Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=heart clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Heart Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=heart specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Heart Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=heart surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Heart Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=homeopathic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Homeopathic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=homoeopathic clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Homoeopathic Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=homoeopathic hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Homoeopathic Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=homoeopathic specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Homoeopathic Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hospital charitables&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hospital Charitables</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hospital equipments&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hospital Equipments</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hospital govt.&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hospital Govt.</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hospital private&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hospital Private</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=hospital t.b&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Hospital T.b</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=joint specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Joint Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=laparoscopic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Laparoscopic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=laparoscopic centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Laparoscopic Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=laparoscopic surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Laparoscopic Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=medi claim&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Medi Claim</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=medical agencies&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Medical Agencies</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=medical agencies for drugs&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Medical Agencies For Drugs</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=medical insurance&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Medical Insurance</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mentally disorder&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mentally Disorder</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mexila surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mexila Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mobile mortuary&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mobile Mortuary</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mortuary&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mortuary</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mortuary cabinet&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mortuary Cabinet</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mortuary freezer&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mortuary Freezer</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mortuary on wheel&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mortuary On Wheel</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mortuary services&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mortuary Services</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=mortuary van&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Mortuary Van</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nephrologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nephrologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nephrologist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nephrologist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nephrologist doctors&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nephrologist Doctors</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=neuro physician&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Neuro Physician</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=neuro surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Neuro Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=neurologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Neurologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=ngo&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Ngo</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nurses for private duties&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nurses For Private Duties</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nursing&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nursing</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nursing bureau&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nursing Bureau</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nursing care service&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nursing Care Service</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nursing college&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nursing College</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nursing home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nursing Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=nursing institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Nursing Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=obstetricians&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Obstetricians</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=old age & senior citizen home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Old Age & Senior Citizen Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=old age & sick care home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Old Age & Sick Care Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=old age care services&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Old Age Care Services</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=old age home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Old Age Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=old age home & sick care&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Old Age Home & Sick Care</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=old age institute&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Old Age Institute</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=optical shop&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Optical Shop</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=orthodontist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Orthodontist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=orthopaedic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Orthopaedic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=orthopaedic surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Orthopaedic Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=orthopedic centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Orthopedic Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=orthopedic clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Orthopedic Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=orthopedic hospital&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Orthopedic Hospital</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=oxygen supplier&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Oxygen Supplier</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=paediatrics&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Paediatrics</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=path lab&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Path Lab</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=pathologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Pathologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=pest control&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Pest Control</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=pest control equipments&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Pest Control Equipments</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physician&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physician</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physician for home visit&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physician For Home Visit</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist for accidental&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist For Accidental</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist for bed redeen&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist For Bed Redeen</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist for home visit&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist For Home Visit</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist for pain management&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist For Pain Management</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=physiotherapist for paralysis&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Physiotherapist For Paralysis</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=plastic surgeon&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Plastic Surgeon</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychiatrist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychiatrist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychiatrist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychiatrist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychiatrist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychiatrist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychiatrist doctors&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychiatrist Doctors</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychologist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychologist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=psychologist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Psychologist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=radiologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Radiologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=radiologist doctors&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Radiologist Doctors</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=rehabilitation&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Rehabilitation</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=rehabilitation centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Rehabilitation Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sex venerologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sex Venerologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sexologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sexologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sexologist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sexologist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sexologist counsellers&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sexologist Counsellers</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=skin specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Skin Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=spa&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Spa</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=spa-fitness & beauty&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Spa-fitness & Beauty</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=spine & back pain specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Spine & Back Pain Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sports&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sports</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sports club&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sports Club</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=sports equipments&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Sports Equipments</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=surgical equipments&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Surgical Equipments</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=surgical shop&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Surgical Shop</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=trauma&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Trauma</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=trauma centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Trauma Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=trust&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Trust</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=unisex spa&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Unisex Spa</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=urologist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Urologist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=urologist centre&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Urologist Centre</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=urologist clinic&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Urologist Clinic</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=urologist specialist&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Urologist Specialist</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=veterinary&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Veterinary</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=veterinary doctor&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Veterinary Doctor</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=veterinary doctor for home visit&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Veterinary Doctor For Home Visit</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=yoga&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Yoga</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=yoga classes at home&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Yoga Classes At Home</a></li>
+                 <li><a href="search_result.php?locality=&category=all&city_name=all&search12=yoga meditation&search_by=both"> <img src="images/bullet.png" width="7" height="7" />Yoga Meditation</a></li>
+               </ul>
+  </div>
+</div>
+</div>
+<div class="center_col">
+  <p class="search_result_text">SEARCH RESULT(S) :</p>
+  	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">1.</b>
+    <a title="View Company Detail" href="search_detail.php?id=1633&category1=Homeopathic&org=SAI HOMEOPATHIC CLINIC">SAI HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/171633.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.SANJEEV KUMAR</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">OM SHUBHAM PLAZA, S.C.O 90, HUDA MARKET, SEC-16, &nbsp;FARIDABAD,&nbsp;
+		Pin: &nbsp; 121001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	         HOMOEOPATHIC SPECIALIST,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=SAI HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=1633&category1=Homeopathic&org=SAI HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">2.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3554&category1=Homeopathic&org=KRISHNA HOMEOPATHIC CLINIC">KRISHNA HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/323554.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.SANDEEP KAILA </span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">WZ33/5, ASALATPUR MARKET A-2, JANAKPURI, &nbsp;DELHI,&nbsp;
+		Pin: &nbsp; 110058			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=KRISHNA HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3554&category1=Homeopathic&org=KRISHNA HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:" >
+    <div class="bgc">
+     <b class="pag">3.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3782&category1=Homeopathic&org=SHARMA CLINIC">SHARMA CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="images/company-logo.jpg" width="140" height="125" />
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.VARUN RISHI</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">B-9, QUTAB PLAZA, DLF CITY-1, &nbsp;GURGAON,&nbsp;
+		Pin: &nbsp; 122001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=SHARMA CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3782&category1=Homeopathic&org=SHARMA CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">4.</b>
+    <a title="View Company Detail" href="search_detail.php?id=2644&category1=Homeopathic&org=VIDHI CLINIC">VIDHI CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/New Picture2644.png" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.VIDHI</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">SEC-31-32, JHARSA ROAD, &nbsp;GURGAON,&nbsp;
+		Pin: &nbsp; 122001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC,&nbsp;	  DOCTORS FOR HOMEOPATHIC,&nbsp;	         	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=VIDHI CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=2644&category1=Homeopathic&org=VIDHI CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">5.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3545&category1=Homeopathic&org=THE HOMEOPATHIC CLINIC">THE HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/173545.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.RAHUL SINGH</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">182, CENTRAL MARKET, MAIN ROAD, MANDAWALI, &nbsp;,&nbsp;
+		Pin: &nbsp; 110092			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC,&nbsp;	  	         DR.RAHUL SINGH,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=THE HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3545&category1=Homeopathic&org=THE HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+          <div  class="sdiv" style="width:100%; border:none; background-color:#ffffff;"  >
+       
+       <a href="http://" target="_blank"><img src="uploaded_logo/" border="0" alt=""
+       
+       style="width:100%; height:113px; border:none;" /></a>
+       </div>
+	       	  <div  class="sdiv" style="background-color:" >
+    <div class="bgc">
+     <b class="pag">6.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3538&category1=Homeopathic&org=HOMEOPATHIC POINT">HOMEOPATHIC POINT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/223538.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.ANUJ</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">199, SEC-21, NOIDA, &nbsp;NOIDA,&nbsp;
+		Pin: &nbsp; 201301			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=HOMEOPATHIC POINT'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3538&category1=Homeopathic&org=HOMEOPATHIC POINT'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:" >
+    <div class="bgc">
+     <b class="pag">7.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3544&category1=Homeopathic&org=AGARWAL CLINIC">AGARWAL CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/43544.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.PANKAJ AGARWAL</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">37, SOUTH EXTENSION, &nbsp;,&nbsp;
+		Pin: &nbsp; 110051			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      AGARAWAL CLINIC,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=AGARWAL CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3544&category1=Homeopathic&org=AGARWAL CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">8.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3555&category1=Homeopathic&org=MALTI HOMEOPATHIC CLINIC">MALTI HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/143555.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.MALTI</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">H.NO.-617, B-BLOCK, SUSHANT LOK-1, &nbsp;GURGAON,&nbsp;
+		Pin: &nbsp; 122001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=MALTI HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3555&category1=Homeopathic&org=MALTI HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">9.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3557&category1=Homeopathic&org=PANACEA HOMEOPATHIC CLINIC">PANACEA HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/483557.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.KAMAL MALIK</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">SHOP NO.- 7&8, PLOT NO-7(NEAR RAMA PARK BUS STAND METRO PILLAR-760), MAIN NAJAFGARH ROAD, &nbsp;DELHI,&nbsp;
+		Pin: &nbsp; 110059			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      HOMOEOPATHIC HOSPITAL,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=PANACEA HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3557&category1=Homeopathic&org=PANACEA HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">10.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3540&category1=Homeopathic&org=GYAN HOMEOPATHIC">GYAN HOMEOPATHIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/53540.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.GYAN</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">SHOP NO-9, 1ST FLOOR, KSHITIJ COMPLEX, SEC-4, MAIN MARKET VAISHALI, NOIDA, &nbsp;,&nbsp;
+		Pin: &nbsp; 201010			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=GYAN HOMEOPATHIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3540&category1=Homeopathic&org=GYAN HOMEOPATHIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+          <div  class="sdiv" style="width:100%; border:none; background-color:#ffffff;"  >
+       
+       <a href="http://" target="_blank"><img src="uploaded_logo/" border="0" alt=""
+       
+       style="width:100%; height:113px; border:none;" /></a>
+       </div>
+	       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">11.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3559&category1=Homeopathic&org=VARUN HERBAL CLINIC">VARUN HERBAL CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/323559.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.VARUN</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">M-4, VARDHMAN CITY-2 PLAZA A ALI ROAD, &nbsp;,&nbsp;
+		Pin: &nbsp; 110002			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC,&nbsp;	  	         VARUN HERBAL CLINIC,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=VARUN HERBAL CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3559&category1=Homeopathic&org=VARUN HERBAL CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:" >
+    <div class="bgc">
+     <b class="pag">12.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3657&category1=Homeopathic&org=HOMEOPATHIC CLINIC">HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/183657.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.D BANERJEE</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">3815, MAIN ARYA SAMAJ ROAD, KAROL BAGH, &nbsp;DELHI,&nbsp;
+		Pin: &nbsp; 110005			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3657&category1=Homeopathic&org=HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">13.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3815&category1=Acupressure&org=HOMEOPATY & ACUPRESSURE CENTRE">HOMEOPATY & ACUPRESSURE CENTRE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="images/company-logo.jpg" width="140" height="125" />
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DUTY DOCTOR</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">1469, Sec-42b, Sector-42 C, &nbsp;CHANDIGARH,&nbsp;
+		Pin: &nbsp; 160036			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC  DOCTORS,&nbsp;	  ASTHAMA DOCTORS,&nbsp;	         	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=HOMEOPATY & ACUPRESSURE CENTRE'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3815&category1=Acupressure&org=HOMEOPATY & ACUPRESSURE CENTRE'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">14.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3659&category1=Homeopathic&org=HOMEOPATHIC HOME">HOMEOPATHIC HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/193659.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.M.L.SHARMA</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">23, NEW MARKET, KAMLA NAGAR, &nbsp;DELHI,&nbsp;
+		Pin: &nbsp; 110007			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=HOMEOPATHIC HOME'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3659&category1=Homeopathic&org=HOMEOPATHIC HOME'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">15.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3662&category1=Homeopathic&org=THE HOMEOPATHIC CLINIC">THE HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/243662.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.WILLMAR SCHWABE</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">A-36, SEC-60, PHASE-3, &nbsp;,&nbsp;
+		Pin: &nbsp; 201304			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC,&nbsp;	  	         DR.WILLMAR SCHWABE,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=THE HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3662&category1=Homeopathic&org=THE HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+          <div  class="sdiv" style="width:100%; border:none; background-color:#ffffff;"  >
+       
+       <a href="http://" target="_blank"><img src="uploaded_logo/" border="0" alt=""
+       
+       style="width:100%; height:113px; border:none;" /></a>
+       </div>
+	       	  <div  class="sdiv" style="background-color:" >
+    <div class="bgc">
+     <b class="pag">16.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3660&category1=Homeopathic&org=KIRAN HOMEOPATHIC PHARMACY">KIRAN HOMEOPATHIC PHARMACY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/313660.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.KIRAN</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">2186, MAIN PATEL ROAD, WEST PATEL NAGAR, &nbsp;DELHI,&nbsp;
+		Pin: &nbsp; 110008			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=KIRAN HOMEOPATHIC PHARMACY'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3660&category1=Homeopathic&org=KIRAN HOMEOPATHIC PHARMACY'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#e1c783;" >
+    <div class="bgc">
+     <b class="pag">17.</b>
+    <a title="View Company Detail" href="search_detail.php?id=9765&category1=Homeopathic&org=BHARAT HOMEOPATHIC CENTRE (HISAR)">BHARAT HOMEOPATHIC CENTRE (HISAR)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/images2059765.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.RAJPAL LAMBA</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">14, NEAR GURUNANAK SENIOR SECONDARY SCHOOL,RISHI NAGAR,HISAR, &nbsp;HISAR,&nbsp;
+		Pin: &nbsp; 125001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMEOPATHIC,&nbsp;	  HOMEOPATHIC CLINIC,&nbsp;	   HOMEOPATHIC HOSPITAL,&nbsp;      HOMEOPATHIC SPECIALIST,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=BHARAT HOMEOPATHIC CENTRE (HISAR)'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=9765&category1=Homeopathic&org=BHARAT HOMEOPATHIC CENTRE (HISAR)'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:" >
+    <div class="bgc">
+     <b class="pag">18.</b>
+    <a title="View Company Detail" href="search_detail.php?id=3398&category1=Homeopathic&org=PRATAP HOMEOPATHIC CLINIC">PRATAP HOMEOPATHIC CLINIC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/513398.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.DHAMA</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">140, BHISHMA PITAMAH MARG, ARJUN NAGAR, KOTLA MUBARAKPUR, &nbsp;DELHI,&nbsp;
+		Pin: &nbsp; 110003			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      HOMOEOPATHIC HOSPITAL,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=PRATAP HOMEOPATHIC CLINIC'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=3398&category1=Homeopathic&org=PRATAP HOMEOPATHIC CLINIC'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">19.</b>
+    <a title="View Company Detail" href="search_detail.php?id=154&category1=Homeopathic&org=HOMEOPATHIC PHYSICIAN">HOMEOPATHIC PHYSICIAN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/20154.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.VIDHI TRIKHA</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">Q-11, SOUTH CITY-I, GURGAON, &nbsp;GURGAON,&nbsp;
+		Pin: &nbsp; 122001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      LADY DOCTER HOMOEOPATHIC,&nbsp;	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=HOMEOPATHIC PHYSICIAN'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=154&category1=Homeopathic&org=HOMEOPATHIC PHYSICIAN'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+       	  <div  class="sdiv" style="background-color:#ffffff;" >
+    <div class="bgc">
+     <b class="pag">20.</b>
+    <a title="View Company Detail" href="search_detail.php?id=223&category1=Homeopathic&org=NEW BOMBAY CANCER HOMEOPATHIC HOSPITAL">NEW BOMBAY CANCER HOMEOPATHIC HOSPITAL</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+      
+      
+      
+       
+    </div>
+    
+    <div class="column">
+	<div class="logos">
+		<img src="upload/34223.jpg" width="140" height="125" />
+	
+		</div>
+  <div class="lft">
+ 
+  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="30%" valign="top"><span class="search_person">Contact Person  </span></td>
+    <td width="3%" valign="top"><span class="search_person">:</span></td>
+    <td width="70%"><span class="style3">DR.A.M. MATHUR</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Address </span> </td>
+    <td valign="top"><span class="search_person">:</span></td>
+    <td><span class="style3">1265, SEC-17-C, &nbsp;GURGAON,&nbsp;
+		Pin: &nbsp; 122001			</span></td>
+  </tr>
+  <tr>
+    <td valign="top"><span class="search_person">Also Listed  </span>:</td>
+    <td valign="top"><strong><span class="search_person">:</span></strong></td>
+    <td><span class="style3">
+		
+      HOMOEOPATHIC,&nbsp;	  HOMOEOPATHIC CLINIC,&nbsp;	   HOMOEOPATHIC SPECIALIST,&nbsp;      	          
+      </span></td>
+  </tr>
+</table>
+
+
+</div>
+
+<div class="rt" align="right">
+
+
+	<div  align="right" >
+    
+    
+
+    <input type="button" value="Send Email" onClick="location.href='enquiry.php?name=NEW BOMBAY CANCER HOMEOPATHIC HOSPITAL'" class="submit_new"/>
+     <input type="button" value="More" onClick="location.href='search_detail.php?id=223&category1=Homeopathic&org=NEW BOMBAY CANCER HOMEOPATHIC HOSPITAL'" class="submit_new1"/>
+    </div>
+    <div class="" style="margin-top:10px"  align="right"></div></div>
+    <div class="clear"></div>
+    </div>
+   
+	</div>
+   
+          <div  class="sdiv" style="width:100%; border:none; background-color:#ffffff;"  >
+       
+       <a href="http://" target="_blank"><img src="uploaded_logo/" border="0" alt=""
+       
+       style="width:100%; height:113px; border:none;" /></a>
+       </div>
+	       	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+        
+		<div align="center" class="pagecount">
+		<strong>Pages :
+		<a href='search_result.php?page=1&city_name=all&locality=&search12=Homeopathic&search_by=both'>1</a>&nbsp;&nbsp;<a href='search_result.php?page=2&city_name=all&locality=&search12=Homeopathic&search_by=both'>2</a>&nbsp;&nbsp;<a href='search_result.php?page=3&city_name=all&locality=&search12=Homeopathic&search_by=both'>3</a>&nbsp;&nbsp;<a href='search_result.php?page=4&city_name=all&locality=&search12=Homeopathic&search_by=both'>4</a>&nbsp;&nbsp;<a href='search_result.php?page=5&city_name=all&locality=&search12=Homeopathic&search_by=both'>5</a>&nbsp;&nbsp;<a href='search_result.php?page=6&city_name=all&locality=&search12=Homeopathic&search_by=both'>6</a>&nbsp;&nbsp;</strong> 
+		</div>
+    </div>
+<div class="right_col">
+<!--<div class=" inner_links">
+
+<div class="inner_links_head">Join Us</div>
+<div class=" inner_links_center" align="center">
+  <form  name="quick" method="post" action="mail.php" onsubmit="return quick_check();">
+    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="85" height="35" align="left" valign="middle" class="tt">Name <font color="#990000">*</font></td>
+        <td width="14" height="35" align="left" valign="middle" class="tt">:</td>
+        <td width="119" height="35" align="left" valign="middle" class="tt">
+          <input name="name" type="text" id="name" size="14" class="txtfield" />
+    </td>
+      </tr>
+      <tr>
+        <td height="35" align="left" valign="middle" class="tt">Phone  <font color="#990000">*</font></td>
+        <td height="35" align="left" valign="middle" class="tt">:</td>
+        <td height="35" align="left" valign="middle" class="tt"><input name="Phone" type="text" id="Phone" size="14" class="txtfield" /></td>
+      </tr>
+      <tr>
+        <td height="35" align="left" valign="middle" class="tt">Services  <font color="#990000">*</font></td>
+        <td height="35" align="left" valign="middle" class="tt">:</td>
+        <td height="35" align="left" valign="middle" class="tt"><input name="Services" type="text" id="Services" size="14" class="txtfield" /></td>
+      </tr>
+      <tr>
+        <td height="35" align="left" valign="middle" class="tt">Category  <font color="#990000">*</font></td>
+        <td height="35" align="left" valign="middle" class="tt">:</td>
+        <td height="35" align="left" valign="middle" class="tt"><input name="Category" type="text" id="Category" size="14" class="txtfield" /></td>
+      </tr>
+      <tr>
+        <td height="35" align="left" valign="middle" class="tt">Email  <font color="#990000">*</font></td>
+        <td height="35" align="left" valign="middle" class="tt">:</td>
+        <td height="35" align="left" valign="middle" class="tt"><input name="email" type="text" id="email" value="" size="14" class="txtfield" /></td>
+      </tr>
+      <tr>
+        <td height="35" colspan="3" align="center" valign="middle" ><input type="submit" name="button" id="button" value="Submit" class="sub_button" /></td>
+        </tr>
+    </table>
+    
+  </form>
+  </div>
+</div>-->
+<!------------------Google Add Start-------------------------->
+<div class="FooterAdd MarTop">
+<div class="skdslider2" >
+    <ul id="demo5" class="slides2">  
+<!-- 24x7medical;helpline -->
+
+
+  
+</ul>
+</div>
+</div>
+
+
+<!------------------Google Add end-------------------------->
+<div class="clear"></div>
+<div class=" inner_links">
+
+
+
+  <div class="inner_links_head">Advertisements</div>
+  
+  <div  class="inner_links_center" align="center">
+ 
+    	<div style="border:#ccc;">
+	    <div style="font-size:14px; color:#1173b2;">
+<u><strong> AAROGYAM PHARMACY   </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/homeopathic-remedies-right.226151411_std383.jpg" border="0" alt=" AAROGYAM PHARMACY   "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> AGARAWAL CLINIC  </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/4130.jpg" border="0" alt=" AGARAWAL CLINIC  "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> GYAN HOMEOPATHIC </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/118339-400x265-Homeopathy11842.jpg" border="0" alt=" GYAN HOMEOPATHIC "  />
+    </a>
+
+	<br />
+    
+      <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/1318594016_263809411_1-SAI-HOMOEOPATHIC-CLINIC-Heerapatti1860.jpg" border="0" alt=" GYAN HOMEOPATHIC  "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> KIRAN HOMEOPATHIC PHARMACY </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/combination-homeopathic-remedies1844.jpg" border="0" alt=" KIRAN HOMEOPATHIC PHARMACY "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> KRISHNA HOMEOPATHIC CLINIC  </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/1127.jpg" border="0" alt=" KRISHNA HOMEOPATHIC CLINIC  "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> MISHRA HOMEOPATHIC CLINIC </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/Homeopathic-Medicine-for-Anxiety1850.jpg" border="0" alt=" MISHRA HOMEOPATHIC CLINIC "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> SHARMA CLINIC  </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/2128.jpg" border="0" alt=" SHARMA CLINIC  "  />
+    </a>
+
+	<br />
+    
+      <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/Dermatologist-assessing-womans-scalp-The-Belgravia-Centre1166.jpg" border="0" alt=" SHARMA CLINIC"  />
+    </a>
+
+	<br />
+    
+      <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/agefotostock_rm_photo_of_woman_laser_treatment1178.jpg" border="0" alt=" SHARMA CLINIC"  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> SUPER MEDICAL AID      </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/homeopathy1.s600x6001854.jpg" border="0" alt=" SUPER MEDICAL AID      "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> SURAKSHA HEALTH CARE </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/Homeopathic_Remedies_for_Menopause-300x2001848.jpg" border="0" alt=" SURAKSHA HEALTH CARE "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> SURYA HOMEOPATHIC PHARMACY   </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/homeopathic-remedy1853.jpg" border="0" alt=" SURYA HOMEOPATHIC PHARMACY   "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> VACHE PHARMACY </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/homeopathic-medicines_250x2501851.jpg" border="0" alt=" VACHE PHARMACY "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong> VASHISHATHA HOMEOPATHIC CLINIC    </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/Homeopathic-pills-0011852.jpg" border="0" alt=" VASHISHATHA HOMEOPATHIC CLINIC    "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong>. NEW BOMBAY CANCER HOMEOPATHIC HOSPITAL</strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/homeopathic_art21846.jpg" border="0" alt=". NEW BOMBAY CANCER HOMEOPATHIC HOSPITAL"  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong>DR.K.K NIGAM CLINIC </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/Homeopathic_medicine1847.jpg" border="0" alt="DR.K.K NIGAM CLINIC "  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+      <div style="font-size:14px; color:#1173b2;">
+<u><strong>JAIN MEDICOS </strong></u></div>
+	<div style="background:#fff;">
+    
+    
+    
+    <div class="RightSideAd">
+    <!--<marquee behavior="alternate" direction="up" style="height:600px;" onmouseover="this.stop()" onmouseout="this.start()">-->
+	    <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/homemade-remedies-treatment-face-acne381.jpg" border="0" alt="JAIN MEDICOS "  />
+    </a>
+
+	<br />
+    
+      <a href="http://www.24x7medicalhelpline.com" target="_blank">
+    <img src="uploaded_images/11127897-pharmacy-chemist-team-women-and-man-in-drugstore924.jpg" border="0" alt="JAIN MEDICOS"  />
+    </a>
+
+	<br />
+    
+    </div>
+<!--</marquee>-->
+ </div>
+
+ <!--  <div> <embed src="upload_video/" height="100" width="200"/></div>-->
+ 
+  
+    </div>
+ </div>
+ 
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<!-------------------------Footer Start----------------------------->
+<footer>
+<div id="category">
+<div id="big_foot">
+<div class="big_foot">
+<div id="Footer">
+<div id="FooterBox">
+<h1><font color="#fff">About Us</font></h1>
+<ul>
+<li><a href="about_us.php?mod=comp_over"> Company Overview</a></li>
+<li><a href="about_us.php?mod=board">Board Of Director</a></li>
+<li><a href="about_us.php?mod=mgt_tem">Managment Team</a></li>
+<li><a href="terms.php">Terms & Condition</a></li>
+</ul>
+</div>
+
+<div id="FooterBox">
+<h1><font color="#fff">Media </font>	</h1>
+<ul>
+<li><a href="media.php?mod=media">Print Media </a></li>
+<li><a href="video.php">Video	</a></li>
+<li><a href="testimonials.php"> Testimonials </a></li>
+
+</ul>
+</div>
+
+
+<div id="FooterBox">
+<h1><font color="#fff">Careers</font></h1>
+<ul>
+<!--<li><a href="hot_jobs.php">Search  Jobs</a></li>-->
+<li><a href="hot_jobs.php">Current Opening</a></li>
+<li><a href="about_us.php?mod=job#">Post Apply</a></li>
+
+</ul>
+</div>
+
+<div id="FooterBox">
+<h1><font color="#fff">Contact Us</font></h1>
+<ul>
+<li><a href="contact.php"> Offices</a></li>
+<li><a href="about_us.php?mod=customer">  Customer Care</a></li>
+<li><a href="join_free.php"> Free Listing</a></li>
+<li><a href="advertise.php"> Advertisement</a></li>
+</ul>
+</div>
+
+<div id="FooterBox">
+<h1><font color="#fff">Membership</font></h1>
+<ul style="border-right:none;">
+<li><a href="register.php"> Register</a></li>
+<li><a href="login.php">  Login</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+<div class="footerBottom">
+<div id="footerLink">
+<p>Copyright &copy; 2013 - 2014 24x7 Medicalhelpline.com All Rights Reserved</p>
+</div>
+<div class="SocialIcon">
+<a href="https://www.facebook.com/medicalhelp" target="_blank"><img src="images/facebook.png"></a>
+<a href="https://twitter.com/medical24x7" target="_blank"><img src="images/twitter.png"></a>
+<a href="#"><img src="images/google+.png"></a>
+<a href="https://www.linkedin.com/24x7medical" target="_blank"><img src="images/in.png"></a>
+<a href="https://www.youtube.com/channel/UC43Rrd6vx9twbTiS5GRoG8Q?feature=guide" target="_blank"><img src="images/youtube.png"></a>
+
+</div>
+</div>
+  </div>
+<div class="clear"></div>
+</div>
+
+</div>
+
+</footer>
+<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'f8a32fff-ed1a-4415-8b60-26086f5816bd', f: true }); done = true; } }; })();</script>
+<!-------------------------Footer Start----------------------------->
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1008387951;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1008387951/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+(function () { (new Image()).src = "//www.googleadservices.com/pagead/conversion/982958360/?label=nRAmCP7JuWEQmILb1AM&guid=ON&amp;script=0"; })();
+
+<script>
+window.onload = function(){
+jQuery('a:contains("View More")').click(function(){
+ga('send','event','Button','Clicked','View more');
+
+})
+}
+</script>
+		<link href="css/testimonials.css" media="screen" rel="stylesheet" type="text/css" />
+		<!--<script type="text/javascript" src="js/testimonials/jquery.min.js"></script>-->
+		<script type="text/javascript" src="js/testimonials/jquery.quovolver.js"></script>
+	
+	<!-- JavaScript Test Zone -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$('blockquote').quovolver();
+		
+	});
+	</script>
+    
+    <script src="src/skdslider.js"></script>
+<link href="src/skdslider.css" rel="stylesheet">
+<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery('#demo1').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:true,showPlayButton:true,autoSlide:true,animationType:'fading'});
+			jQuery('#demo2').skdslider({delay:5000, animationSpeed: 1000,showNextPrev:true,showPlayButton:false,autoSlide:true,animationType:'sliding'});
+			jQuery('#demo3').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:true,showPlayButton:true,autoSlide:true,animationType:'fading'});
+			jQuery('#demo4').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:true,showPlayButton:true,autoSlide:true,animationType:'fading'});
+			jQuery('#demo5').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:true,showPlayButton:true,autoSlide:true,animationType:'fading'});
+			
+			jQuery('#responsive').change(function(){
+			  $('#responsive_wrapper').width(jQuery(this).val());
+			});
+			
+		});
+</script> 
+<!-- Google Code for search name Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1008387951;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "xOlHCICb9mEQ747r4AM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1008387951/?label=xOlHCICb9mEQ747r4AM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+ 
+    
+</body>
+</html>
