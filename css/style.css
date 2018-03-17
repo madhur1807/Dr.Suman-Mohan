@@ -59,7 +59,8 @@ body a:hover{
 	text-align: center;
 	letter-spacing: -1px;
 	margin: 0;
-	font-family: 'Roboto', sans-serif;
+	font-family: -webkit-pictograph;
+	/*font-family: 'Roboto', sans-serif;*/
 }
 .top-nav {
 	float:right;
